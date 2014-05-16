@@ -3,6 +3,26 @@ package lab.calculus.derivatives
 object DerivativesLab2 {
     import math._
     
+    def main(args: Array[String]): Unit = {
+        
+        // Two different functions to derive derviatives for
+        def f1 = (x: Double) => pow(x,2)
+        def f2 = (x: Double) => pow(x,2) * 1.5
+        
+        // testing inputs for x1 and x2
+        val params = List((3,7), (7,3), (5,12), (-5,12))
+        
+        params.foreach { x =>
+            val x1 = x._1
+            val x2 = x._2
+            // slope derivative results for each
+	        println("derive slope for f1 with x1=" + x1 + " x2=" + x2)
+	        println("final slope for f1: " + deriveSlope(f1, x1, x2) + "\n")
+	        println("derive slope for f2 with x1=" + x1 + " x2=" + x2)
+	        println("final slope for f2: " + deriveSlope(f2, x1, x2)  + "\n")
+        }
+    }
+    
     val deltaThreshold = 0.000001
     
     /* Calculates slope based on delta x and slope function as
@@ -17,7 +37,6 @@ object DerivativesLab2 {
         
         // Returns reduced delta; recursive
         def moveCloser(x1: Double, x2: Double): Double = {
-            println("moveCloser - TOP")
             val dif = abs(x1 - x2)
 			if(x2 > x1) x2 - dif * .99999
 			else x2 + dif * .99999
@@ -25,7 +44,6 @@ object DerivativesLab2 {
         
         // Returns slope with reduced delta
         def deriveSlope(x1: Double, x2: Double): Double = {
-            println("INNER deriveSlope - TOP")
             val newX2 = moveCloser(x1, x2)
             val dx = delta(x1, newX2)
             val slope = (f(x1 + dx) - f(x1)) / dx
