@@ -16,20 +16,22 @@ object DerivativesLab_test {
         var x2 = 7
         
         // slope derivative results for each
-        println("calling deriveSlope for f1: ")
-        println("final slope for f1: " + deriveSlope(f1, x1, x2))
-/*        print("regression of slope for f2: ")
-        deriveSlope(f2, x1, x2)  + "\n"
+        println("derive slope for f1 with x1=" + x1 + " x2=" + x2)
+        println("final slope for f1: " + deriveSlope(f1, x1, x2) + "\n")
+        println("derive slope for f2 with x1=" + x1 + " x2=" + x2)
+        println("final slope for f2: " + deriveSlope(f2, x1, x2)  + "\n")
         
         // reverse same input
         x1 = 7
         x2 = 3
         
         // slope results
-        println("regression of slope for f1:\n" + deriveSlope(f1, x1, x2))
-        println("regression of slope for f2:\n" + deriveSlope(f2, x1, x2)  + "\n")
+        println("derive slope for f1 with x1=" + x1 + " x2=" + x2)
+        println("final slope for f1: " + deriveSlope(f1, x1, x2) + "\n")
+        println("derive slope for f2 with x1=" + x1 + " x2=" + x2)
+        println("final slope for f2: " + deriveSlope(f2, x1, x2)  + "\n")
         
-        // some different input
+/*        // some different input
         x1 = 5
         x2 = 12
         
