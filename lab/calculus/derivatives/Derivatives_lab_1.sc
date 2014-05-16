@@ -15,7 +15,7 @@ object Derivatives_lab_1 {
 	def delta(x1: Double, x2: Double): Double = x2 - x1
                                                   //> delta: (x1: Double, x2: Double)Double
 	var dx = delta(x1, x2)                    //> dx  : Double = 4.0
-	
+
 	//diagnostics during development
 	//f(x1)
 	//f(x1 + dx)

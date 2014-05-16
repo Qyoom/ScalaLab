@@ -28,6 +28,7 @@ object DeltaTowardZero_lab {
 				if(x2 > x1) x2 - dif * .99999
 				else x2 + dif * .99999
 			}
+			// recursion
 			closer(x1, newX2)
 		}
 	}                                         //> closer: (x1: Double, x2: Double)Double

@@ -2,65 +2,38 @@ package lab.calculus.derivatives
 
 object DerivativesLab2 {
     import math._
-
-    def main(args: Array[String]): Unit = {
-        
-        // Two different functions to derive derviatives for
-        def f1 = (x: Double) => pow(x,2)
-        def f2 = (x: Double) => pow(x,2) * 1.5
-        
-        // same input for each
-        var x1 = 3
-        var x2 = 7
-        
-        // derivate results for each
-        println("derivative for f1 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f1, x1, x2))
-        println("derivative for f2 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f2, x1, x2)  + "\n")
-                
-        // reverse same input
-        x1 = 7
-        x2 = 3
-        
-        // derivate results
-        println("derivative for f1 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f1, x1, x2))
-        println("derivative for f2 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f2, x1, x2)  + "\n")
-        
-        // some different input
-        x1 = 5
-        x2 = 12
-        
-        // new derivative results
-        println("derivative for f1 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f1, x1, x2))
-        println("derivative for f2 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f2, x1, x2)  + "\n")
-                
-        // some input with negative values
-        x1 = -5
-        x2 = 12
-        
-        // new derivative results
-        println("derivative for f1 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f1, x1, x2))
-        println("derivative for f2 with x1=" + x1 + " and x2=" + x2 + " is " + 
-                deriv(f2, x1, x2)  + "\n")
-    } // end - main
-        
-    /* Calculates derivative based on delta(x) and slope function as
+    
+    val deltaThreshold = 0.000001
+    
+    /* Calculates slope based on delta x and slope function as
      * x2 goes toward x1 and delta goes toward 0
-     */ 
-    def deriv(f: Double => Double, x1: Double, x2: Double): Double = {
-        // delta
-        val dx = delta(x1, x2)
-        // slope
-        val slope = (f(x1 + dx) - f(x1)) / dx
-        // iterate dx -> 0
+     */
+    def deriveSlope(f: Double => Double, x1: Double, x2: Double): Double = {
         
-    }
+        def dx = delta(x1, x2)
+        val slope = (f(x1 + dx) - f(x1)) / dx // TODO: Factor with other identical copy
+        println("initial slope: " + slope)
+        
+        // Returns reduced delta; recursive
+        def moveCloser(x1: Double, x2: Double): Double = {
+            val dif = abs(x1 - x2)
+			if(x2 > x1) x2 - dif * .99999
+			else x2 + dif * .99999
+		}
+        
+        // Returns slope with reduced delta
+        def deriveSlope(x1: Double, x2: Double): Double = {
+            val newX2 = moveCloser(x1, x2)
+            val dx = delta(x1, newX2)
+            val slope = (f(x1 + dx) - f(x1)) / dx // TODO: Factor with other identical copy
+            println("deriveSlope - slope: " + slope)
+            if(dx > deltaThreshold) deriveSlope(x1, newX2) // inner recursion
+            else slope
+        }
+        
+        if(dx > deltaThreshold) deriveSlope(x1, x2)
+        else slope
+    } // end outer deriveSlope
     
     def delta(x1: Double, x2: Double): Double = x2 - x1
 }
