@@ -3,22 +3,6 @@ package matrixlike
 object MatrixLike_lab_1 {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   
-  def matxMult(m1: List[List[Double]], m2: List[List[Double]]): List[List[Double]] = {
-  	
-  	
-  	
-  	List(List(0.0)) // STUB - NIX
-  }                                               //> matxMult: (m1: List[List[Double]], m2: List[List[Double]])List[List[Double]]
-                                                  //| 
-  
-  val m1 = List(List(2.0,2.0), List(2.0,2.0), List(2.0,2.0), List(2.0,2.0))
-                                                  //> m1  : List[List[Double]] = List(List(2.0, 2.0), List(2.0, 2.0), List(2.0, 2.
-                                                  //| 0), List(2.0, 2.0))
-  val m2 = List(List(3.0,3.0,3.0), List(3.0,3.0,3.0))
-                                                  //> m2  : List[List[Double]] = List(List(3.0, 3.0, 3.0), List(3.0, 3.0, 3.0))
-  
-  matxMult(m1, m2)                                //> res0: List[List[Double]] = List(List(0.0))
-  
  	def dotProd(v1: List[Double], v2: List[Double]): Double = {
     require(v1.length == v2.length, "dotProduct - Rows must be of equal length.")
     val zipped = v1 zip v2
@@ -43,4 +27,16 @@ object MatrixLike_lab_1 {
     for(m2col <- transpose(m2)) yield
     dotProd(m1row, m2col)
   }                                               //> mXm: (m1: List[List[Double]], m2: List[List[Double]])List[List[Double]]
+  
+  /********************************************************/
+  
+  val m1 = List(List(2.0,2.0), List(2.0,2.0), List(2.0,2.0), List(2.0,2.0))
+                                                  //> m1  : List[List[Double]] = List(List(2.0, 2.0), List(2.0, 2.0), List(2.0, 2
+                                                  //| .0), List(2.0, 2.0))
+  val m2 = List(List(3.0,3.0,3.0), List(3.0,3.0,3.0))
+                                                  //> m2  : List[List[Double]] = List(List(3.0, 3.0, 3.0), List(3.0, 3.0, 3.0))
+  mXm(m1, m2)                                     //> res0: List[List[Double]] = List(List(12.0, 12.0, 12.0), List(12.0, 12.0, 12
+                                                  //| .0), List(12.0, 12.0, 12.0), List(12.0, 12.0, 12.0))
+  
+  mXm(List(List()), List(List()))                 //> res1: List[List[Double]] = List(List())
 }
