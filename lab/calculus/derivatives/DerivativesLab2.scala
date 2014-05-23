@@ -1,7 +1,7 @@
 package lab.calculus.derivatives
 
 object DerivativesLab2 {
-    import math._
+    import scala.math._
     
     def main(args: Array[String]): Unit = {
         
@@ -9,7 +9,7 @@ object DerivativesLab2 {
         def f1 = (x: Double) => pow(x,2)
         def f2 = (x: Double) => pow(x,2) * 1.5
         
-        // testing inputs for x1 and x2
+        // series of test inputs x1 and x2
         val params = List((3,7), (7,3), (5,12), (-5,12))
         
         params.foreach { x =>
@@ -17,9 +17,9 @@ object DerivativesLab2 {
             val x2 = x._2
             // slope derivative results for each
 	        println("derive slope for f1 with x1=" + x1 + " x2=" + x2)
-	        println("final slope for f1: " + deriveSlope(f1, x1, x2) + "\n")
+	        println("final slope for f1: " + deriveSlope(f1)(x1, x2) + "\n")
 	        println("derive slope for f2 with x1=" + x1 + " x2=" + x2)
-	        println("final slope for f2: " + deriveSlope(f2, x1, x2)  + "\n")
+	        println("final slope for f2: " + deriveSlope(f2)(x1, x2)  + "\n")
         }
     }
     
@@ -28,7 +28,7 @@ object DerivativesLab2 {
     /* Calculates slope based on delta x and slope function as
      * x2 goes toward x1 and delta goes toward 0
      */
-    def deriveSlope(f: Double => Double, x1: Double, x2: Double): Double = {
+    def deriveSlope(f: Double => Double) (x1: Double, x2: Double): Double = {
         
         def delta(x1: Double, x2: Double): Double = x2 - x1
         def dx = delta(x1, x2)

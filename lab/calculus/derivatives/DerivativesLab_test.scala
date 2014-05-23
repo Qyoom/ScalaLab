@@ -17,9 +17,9 @@ object DerivativesLab_test {
         
         // slope derivative results for each
         println("derive slope for f1 with x1=" + x1 + " x2=" + x2)
-        println("final slope for f1: " + deriveSlope(f1, x1, x2) + "\n")
+        println("final slope for f1: " + deriveSlope(f1) (x1, x2) + "\n")
         println("derive slope for f2 with x1=" + x1 + " x2=" + x2)
-        println("final slope for f2: " + deriveSlope(f2, x1, x2)  + "\n")
+        println("final slope for f2: " + deriveSlope(f2) (x1, x2)  + "\n")
         
         // reverse same input
         x1 = 7
@@ -27,33 +27,33 @@ object DerivativesLab_test {
         
         // slope results
         println("derive slope for f1 with x1=" + x1 + " x2=" + x2)
-        println("final slope for f1: " + deriveSlope(f1, x1, x2) + "\n")
+        println("final slope for f1: " + deriveSlope(f1) (x1, x2) + "\n")
         println("derive slope for f2 with x1=" + x1 + " x2=" + x2)
-        println("final slope for f2: " + deriveSlope(f2, x1, x2)  + "\n")
+        println("final slope for f2: " + deriveSlope(f2) (x1, x2)  + "\n")
         
 /*        // some different input
         x1 = 5
         x2 = 12
         
         // new slope results
-        println("regression of slope for f1:\n" + deriveSlope(f1, x1, x2))
-        println("regression of slope for f2:\n" + deriveSlope(f2, x1, x2)  + "\n")
+        println("regression of slope for f1:\n" + deriveSlope(f1) (x1, x2))
+        println("regression of slope for f2:\n" + deriveSlope(f2) (x1, x2)  + "\n")
                 
         // some input with negative values
         x1 = -5
         x2 = 12
         
         // new slope results
-        println("regression of slope for f1:\n" + deriveSlope(f1, x1, x2))
-        println("regression of slope for f2:\n" + deriveSlope(f2, x1, x2)  + "\n")
+        println("regression of slope for f1:\n" + deriveSlope(f1) (x1, x2))
+        println("regression of slope for f2:\n" + deriveSlope(f2) (x1, x2)  + "\n")
                 
         // and reversed with negative values
         x1 = 12
         x2 = -5
         
         // new slope results
-        println("regression of slope for f1:\n" + deriveSlope(f1, x1, x2))
-        println("regression of slope for f2:\n" + deriveSlope(f2, x1, x2)  + "\n")  
+        println("regression of slope for f1:\n" + deriveSlope(f1) (x1, x2))
+        println("regression of slope for f2:\n" + deriveSlope(f2) (x1, x2)  + "\n")  
 */ 
     } // end - main
 

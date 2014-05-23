@@ -19,9 +19,9 @@ object DerivativesLab_test_2 {
             val x2 = x._2
             // slope derivative results for each
 	        println("derive slope for f1 with x1=" + x1 + " x2=" + x2)
-	        println("final slope for f1: " + deriveSlope(f1, x1, x2) + "\n")
+	        println("final slope for f1: " + deriveSlope(f1) (x1, x2) + "\n")
 	        println("derive slope for f2 with x1=" + x1 + " x2=" + x2)
-	        println("final slope for f2: " + deriveSlope(f2, x1, x2)  + "\n")
+	        println("final slope for f2: " + deriveSlope(f2) (x1, x2)  + "\n")
         }
     }
 }
