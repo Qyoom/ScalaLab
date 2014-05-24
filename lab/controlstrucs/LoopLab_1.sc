@@ -6,9 +6,11 @@ object LoopLab_1 {
   var x = 0 // an abomination!                    //> x  : Int = 0
   while(x < 5) {
   		println(x); x += 1
-  	}                                         //> 0
+  }                                               //> 0
                                                   //| 1
                                                   //| 2
                                                   //| 3
                                                   //| 4
+  
+  
 }
