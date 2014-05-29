@@ -1,6 +1,8 @@
 package lab.math
 import math._
 
+// The inverse function of f(x) is the function that "un-does" what ever f does so that
+// the original x is returned
 object Inverse_lab {
 	def cube = (x: Double) => pow(x, 3)       //> cube: => Double => Double
 	def cubeRoot = (x: Double) => pow(x, 1.0/3)

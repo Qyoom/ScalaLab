@@ -23,17 +23,14 @@ object Type_lab_2 {
 		type U = Int
 	}
 	
-		def newIntSeqBuffer(elem1: Int, elem2: Int): IntSeqBuffer = {
-			new IntSeqBuffer {
-				type T = List[U]
-				val element = List(elem1, elem2)
-			}
-		}                                 //> newIntSeqBuffer: (elem1: Int, elem2: Int)lab.typestudy2.Type_lab_2.IntSeqBuf
-                                                  //| fer
-		val buf = newIntSeqBuffer(7, 8)   //> buf  : lab.typestudy2.Type_lab_2.IntSeqBuffer = lab.typestudy2.Type_lab_2$$a
+	def newIntSeqBuffer(elems: Int*): IntSeqBuffer = {
+		new IntSeqBuffer {
+			type T = List[U]
+			val element = elems.toList
+		}
+	}                                         //> newIntSeqBuffer: (elems: Int*)lab.typestudy2.Type_lab_2.IntSeqBuffer
+	
+	val buf = newIntSeqBuffer(7, 8, 9, 10)    //> buf  : lab.typestudy2.Type_lab_2.IntSeqBuffer = lab.typestudy2.Type_lab_2$$a
                                                   //| nonfun$main$1$$anon$1@1d3c468a
-		println("length: " + buf.length)  //> length: 2
-		println("element: " + buf.element)//> element: List(7, 8)
-		buf                               //> res0: lab.typestudy2.Type_lab_2.IntSeqBuffer = lab.typestudy2.Type_lab_2$$an
-                                                  //| onfun$main$1$$anon$1@1d3c468a
+	buf.element                               //> res0: lab.typestudy2.Type_lab_2.buf.T = List(7, 8, 9, 10)
 }

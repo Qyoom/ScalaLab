@@ -1,7 +1,6 @@
 package matrixlike
 
 object VectorLike_lab_1 {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   
   val v1 = List(5.0, 4.0, 3.0, 2.0)               //> v1  : List[Double] = List(5.0, 4.0, 3.0, 2.0)
   val v2 = List(2.0, 2.0, 2.0, 2.0)               //> v2  : List[Double] = List(2.0, 2.0, 2.0, 2.0)

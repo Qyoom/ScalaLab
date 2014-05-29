@@ -1,8 +1,9 @@
 package lab.math
+
 import math._
-object Math_lab_1 {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
-  log(6)                                          //> res0: Double = 1.791759469228055
+
+object Rounding_lab {
+	log(6)                                    //> res0: Double = 1.791759469228055
   
   /* http://stackoverflow.com/questions/11106886/scala-doubles-and-precision
    * double n and precision p, using currying */
@@ -17,5 +18,4 @@ object Math_lab_1 {
   
   roundAt(2)(raw)                                 //> scale: 100.0
                                                   //| res1: Double = 5.09
-  
 }
