@@ -8,7 +8,7 @@ object SumCols_lab {
                                                   //| st(1.0, 2.0, 3.0), List(1.0, 2.0, 3.0))
   
   def sumCols(m: List[List[Double]]): List[Double] = {
-  	if(m.head.isEmpty) Nil
+ 	if(m.head.isEmpty) Nil
 		else {
 			val col = m map(_ head)
 			val otherCols = m map(_ tail)

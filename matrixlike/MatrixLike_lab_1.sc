@@ -7,8 +7,13 @@ object MatrixLike_lab_1 {
     require(v1.length == v2.length, "dotProduct - Rows must be of equal length.")
     val zipped = v1 zip v2
     //println("zipped: " + zipped)
-    val dotProdRes = zipped map {tup: (Double, Double) => tup._1 * tup._2} reduceLeft(_ + _)
-    //println("dotProduct - result: " + dotProdRes)
+    val dotProdRes = zipped map {
+    	tup: (Double, Double) => {
+    		println("dotProd " + tup._1 + " * " + tup._2 + " = " + tup._1 * tup._2)
+    		tup._1 * tup._2
+			}
+		} reduceLeft(_ + _)
+		println("dotProdRes: " + dotProdRes)
     dotProdRes
   }                                               //> dotProd: (v1: List[Double], v2: List[Double])Double
   
@@ -35,8 +40,60 @@ object MatrixLike_lab_1 {
                                                   //| .0), List(2.0, 2.0))
   val m2 = List(List(3.0,3.0,3.0), List(3.0,3.0,3.0))
                                                   //> m2  : List[List[Double]] = List(List(3.0, 3.0, 3.0), List(3.0, 3.0, 3.0))
-  mXm(m1, m2)                                     //> res0: List[List[Double]] = List(List(12.0, 12.0, 12.0), List(12.0, 12.0, 12
-                                                  //| .0), List(12.0, 12.0, 12.0), List(12.0, 12.0, 12.0))
+  mXm(m1, m2)                                     //> dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 12.0
+                                                  //| res0: List[List[Double]] = List(Lis
+                                                  //| Output exceeds cutoff limit.
   
   mXm(List(List()), List(List()))                 //> res1: List[List[Double]] = List(List())
+  
+  dotProd(List(2), List(3))                       //> dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProdRes: 6.0
+                                                  //| res2: Double = 6.0
+  dotProd(List(2,4), List(3,5))                   //> dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 4.0 * 5.0 = 20.0
+                                                  //| dotProdRes: 26.0
+                                                  //| res3: Double = 26.0
+  val l1 = List(2.0,4.0)                          //> l1  : List[Double] = List(2.0, 4.0)
+  val l2 = List(3.0,5.0)                          //> l2  : List[Double] = List(3.0, 5.0)
+  val m3 = List(l1)                               //> m3  : List[List[Double]] = List(List(2.0, 4.0))
+  val m4 = List(l2)                               //> m4  : List[List[Double]] = List(List(3.0, 5.0))
+  mXm(m3, m4.transpose)                           //> dotProd 2.0 * 3.0 = 6.0
+                                                  //| dotProd 4.0 * 5.0 = 20.0
+                                                  //| dotProdRes: 26.0
+                                                  //| res4: List[List[Double]] = List(List(26.0))
 }

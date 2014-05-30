@@ -31,6 +31,6 @@ object Type_lab_2 {
 	}                                         //> newIntSeqBuffer: (elems: Int*)lab.typestudy2.Type_lab_2.IntSeqBuffer
 	
 	val buf = newIntSeqBuffer(7, 8, 9, 10)    //> buf  : lab.typestudy2.Type_lab_2.IntSeqBuffer = lab.typestudy2.Type_lab_2$$a
-                                                  //| nonfun$main$1$$anon$1@1d3c468a
+                                                  //| nonfun$main$1$$anon$1@80d3d6f
 	buf.element                               //> res0: lab.typestudy2.Type_lab_2.buf.T = List(7, 8, 9, 10)
 }
