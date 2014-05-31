@@ -14,4 +14,7 @@ object ListLab1 {
 	l1 ++ List(5)                             //> res6: List[Int] = List(1, 2, 3, 4, 5)
 	l1.reverse                                //> res7: List[Int] = List(4, 3, 2, 1)
 	
+	val l2 = List(1.0)                        //> l2  : List[Double] = List(1.0)
+	l2(0)                                     //> res8: Double = 1.0
+	
 }
