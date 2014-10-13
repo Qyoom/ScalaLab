@@ -1,7 +1,6 @@
 package lab.functions
 
 object Composition_lab_1 {
-  println("Scalacheat - Scala Documentation.html")//> Scalacheat - Scala Documentation.html
   
   type R = Double
   def compose(g:R=>R, h:R=>R) = {
@@ -17,7 +16,8 @@ object Composition_lab_1 {
   f(f(3))                                         //> res2: lab.functions.Composition_lab_1.R = 9.0
   
   // Currying - obvious syntax
-  def zscore(mean:R, sd:R) = (x:R) => (x-mean)/sd //> zscore: (mean: lab.functions.Composition_lab_1.R, sd: lab.functions.Composit
+  def zscore(mean:R, sd:R) = (x:R) => (x - mean)/sd
+                                                  //> zscore: (mean: lab.functions.Composition_lab_1.R, sd: lab.functions.Composit
                                                   //| ion_lab_1.R)lab.functions.Composition_lab_1.R => Double
   def normer = zscore(85, 8)                      //> normer: => lab.functions.Composition_lab_1.R => Double
   normer(80)                                      //> res3: Double = -0.625

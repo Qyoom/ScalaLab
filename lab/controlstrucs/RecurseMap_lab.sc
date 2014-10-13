@@ -13,11 +13,11 @@ object RecurseMap_lab {
   val theta = List(2,3,4,5)                       //> theta  : List[Int] = List(2, 3, 4, 5)
   
   def iter(m: List[List[Int]]) {
-  	println("iter TOP")
-  	if(!m.isEmpty) {
-  		m.head.map(x => println("mapping x:" + x))
-  		iter(m.tail)
-  	}
+	  	println("iter TOP")
+	  	if(!m.isEmpty) {
+	  		m.head.map(x => println("mapping x:" + x))
+	  		iter(m.tail)
+	  	}
   }                                               //> iter: (m: List[List[Int]])Unit
   
   iter(matrix1)                                   //> iter TOP

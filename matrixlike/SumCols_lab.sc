@@ -21,7 +21,6 @@ object SumCols_lab {
   		i <- (0 to m.length - 1)
   		rowSum = m(i).reduceRight(_+_)
   	} yield rowSum
-  	
   	rowSums.toList
   }                                               //> sumRows: (m: List[List[Double]])List[Double]
   

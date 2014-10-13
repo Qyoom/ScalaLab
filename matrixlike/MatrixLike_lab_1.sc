@@ -3,6 +3,7 @@ package matrixlike
 object MatrixLike_lab_1 {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   
+  // dotProd takes two vectors and reduces the pair products to a single sum
  	def dotProd(v1: List[Double], v2: List[Double]): Double = {
     require(v1.length == v2.length, "dotProduct - Rows must be of equal length.")
     val zipped = v1 zip v2
@@ -12,7 +13,7 @@ object MatrixLike_lab_1 {
     		println("dotProd " + tup._1 + " * " + tup._2 + " = " + tup._1 * tup._2)
     		tup._1 * tup._2
 			}
-		} reduceLeft(_ + _)
+		} reduceLeft(_ + _) // reduce is summation of 2 cols (prod) by n rows to Double
 		println("dotProdRes: " + dotProdRes)
     dotProdRes
   }                                               //> dotProd: (v1: List[Double], v2: List[Double])Double

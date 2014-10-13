@@ -21,6 +21,15 @@ object MatrixOps {
         val dotProdRes = zipped map {tup: (Double, Double) => tup._1 * tup._2} reduceLeft(_ + _)
         dotProdRes
     }
+    
+    def elemWiseProd(v1: List[Double], v2: List[Double]): List[Double] = {
+        require(v1.length == v2.length, "elemWiseProd - Lists must be of equal length. " + 
+            "v1.length;" + v1.length + " v2.length:" + v2.length +
+            "\nv1: " + v1 + " v2: " + v2)
+        val zipped = v1 zip v2
+        val elemWiseProdRes = zipped map {tup: (Double, Double) => tup._1 * tup._2}
+        elemWiseProdRes
+    }
   
     def transpose(m: List[List[Double]]): List[List[Double]] = { // Recursive
     	if(m.head.isEmpty) Nil // convergence condition
@@ -31,7 +40,7 @@ object MatrixOps {
 		    t_head :: recurseTranspOfTails // cons each new transposed "column" onto a new Matrix
 		}
     }
-
+    
     def diff(v1: List[Double], v2: List[Double]): List[Double] = {
 	  	require(v1.length == v2.length, "diff - inputs must be of equal length.")
 	  	val zipped = v1 zip v2
@@ -39,7 +48,7 @@ object MatrixOps {
 	  	difRes
     }
     
-    def dotPow(v: List[Double], exp: Double): List[Double] = {
+    def elemWisePow(v: List[Double], exp: Double): List[Double] = {
         v map (n => pow(n, exp))
     }
     
@@ -66,4 +75,13 @@ object MatrixOps {
         val colCnt = m.head.length
         (rowCnt, colCnt)
     }
+    
+    // convenience, transform List[] to List[List[]]
+	def colVectToMatrix(list: List[Double]): List[List[Double]] = {
+		list.map(d => List(d))
+	}
+	
+	def rowVectToMatrix(list: List[Double]): List[List[Double]] = {
+	    List(list)
+	}
 }
