@@ -149,4 +149,9 @@ object case_class_lab_2 {
                                                   //> The capital of France is Paris
                                                   //| The capital of Japan is Tokyo
                                                   //| The capital of Iowa is Des Moines
+  val results = List(Some("apple"), None, Some("orange"))
+                                                  //> results  : List[Option[String]] = List(Some(apple), None, Some(orange))
+  // Picking elements of a list that match a pattern
+  for (Some(fruit) <- results) println(fruit)     //> apple
+                                                  //| orange
 }
