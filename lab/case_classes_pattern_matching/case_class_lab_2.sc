@@ -142,31 +142,11 @@ object case_class_lab_2 {
 	withDefault(Some(10))                     //> res20: Int = 10
 	withDefault(None)                         //> res21: Int = 0
 	
-	// Patterns if for expressions
+	// Patterns in for expressions
 	
 	for ((country, city) <- capitals)
      println("The capital of "+ country +" is "+ city)
                                                   //> The capital of France is Paris
                                                   //| The capital of Japan is Tokyo
                                                   //| The capital of Iowa is Des Moines
-  for (i <- 1 to 20) println(i)                   //> 1
-                                                  //| 2
-                                                  //| 3
-                                                  //| 4
-                                                  //| 5
-                                                  //| 6
-                                                  //| 7
-                                                  //| 8
-                                                  //| 9
-                                                  //| 10
-                                                  //| 11
-                                                  //| 12
-                                                  //| 13
-                                                  //| 14
-                                                  //| 15
-                                                  //| 16
-                                                  //| 17
-                                                  //| 18
-                                                  //| 19
-                                                  //| 20
 }
