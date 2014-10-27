@@ -24,4 +24,7 @@ object lift_lab_1 {
  	doubleMe(1)                               //> res6: Int = 2
  	doubleMe(42)                              //> res7: Int = 84
  	doubleMe(-42)                             //> res8: Int = -84
+ 	
+ 	// but what's the big deal?
+ 	times2(42)                                //> res9: Int = 84
 }

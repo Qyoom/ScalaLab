@@ -20,12 +20,13 @@ object Future_lab_1 extends App{
     	} map { exc => 
     	    res = exc
     	    println("map<1> f2 success, exc: " + exc)
-    	    println("map<1> f2 success, res: " + getRes)
+    	    println("map<1> f2 success, res: " + res)
+    	    println("map<1> f2 success, getRes: " + getRes)
     	}
     	
-    	println("res: " + res)
+    	println("Why does this print first? res: " + res)
     	f2 map {exc => println("map<2> f2 success: " + exc)}
-    	for (exc <- f2.failed) println("f2 failed: " + exc)
+    	for (exc <- f2.failed) yield println("f2 failed: " + exc)
     	for (exc <- f2) yield println("f2 success: " + exc)
     	
 }

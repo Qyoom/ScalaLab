@@ -37,17 +37,17 @@ object case_class_lab_2 {
   identity(var_x) == Var("x")                     //> res4: Boolean = true
   
   def typeCheck(e: Expr) = e match {
-  		case UnOp(op, _) => println("got UnOp of type: " + op)
-  		case BinOp(op, left, right) => println("got BinOp")
+  		case UnOp(op, _) => println("got UnOp with " + op + " operator.")
+  		case BinOp(op, left, right) => println("got BinOp with " + op + " operator.")
   		case Number(num) => println("got number: " + num)
   		case _ => println("something else")
   }                                               //> typeCheck: (e: lab.case_classes_pattern_matching.case_class_lab_2.Expr)Unit
                                                   //| 
   
-  typeCheck(var_x)                                //> got UnOp of type: -
+  typeCheck(var_x)                                //> got UnOp with - operator.
   typeCheck(Number(7))                            //> got number: 7.0
   
-  // Deconstruction. You can use a pattern instead of a simple identifier
+  // Deconstruction. You can use a pattern instead of a simple identifier.
   
   val exp = new BinOp("*", Number(5), Number(1))  //> exp  : lab.case_classes_pattern_matching.case_class_lab_2.BinOp = BinOp(*,N
                                                   //| umber(5.0),Number(1.0))
@@ -127,7 +127,7 @@ object case_class_lab_2 {
 	 * be used anywhere a function literal can be used. Essentially,
 	 * a case sequence is a function literal, only more general.
 	 * Instead of having a single entry point and list of parameters,
-	 * a case sequence has multiple entry points, each with their own
+	 * a case sequence has multiple entry points, each having its own
 	 * list of parameters. Each case is an entry point to the function,
 	 * and the parameters are specified with the pattern. The body of
 	 * each entry point is the right-hand side of the case.
