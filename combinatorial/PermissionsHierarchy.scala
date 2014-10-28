@@ -101,8 +101,7 @@ object PermissionHierarchyLab3 {
   				case None => {
   					// Neither have projectIds, so then need to compare endpoint specificity
   					candidate1.endpoint match {
-  						case Some(cand1_endpoint) => { //
-  						
+  						case Some(cand1_endpoint) => {
   							candidate2.endpoint match {
   								case Some(cand2_endpoint) => {
   									// Still a match, so now the final comparison of roles...
@@ -115,21 +114,31 @@ object PermissionHierarchyLab3 {
   								} // end Some(cand2_endpoint)
   								case None => {
   									// candidate1 wins because of endpoint specificity
-  									println("Outcome: candidate1 wins because of endpoint specificity")
+  									println("Outcome: candidate1 wins because of endpoint specificity.")
   								} // end case None for candidate2.endpoint match
   							} // end candidate2.endpoint match
-  							
   						} // end case Some(cand1_endpoint)
-  						
-  						case None => {} //
-  						
+  						case None => { // If candidate2 has endpoint it wins, else just compare roles.
+  						    candidate2.endpoint match {
+  						        case Some(cand2_endpoint) => {
+  						            println("Outcome: candidate2 wins because of more restrictive role.")
+  						        } // end case Some(cand2_endpoint)
+  						        case None => {
+  						            // No projectIds nor endpoints at this point, so just compare roles.
+  						            if (candidate1.role > candidate2.role) {
+										println("Outcome: candidate1 wins because of more restrictive role.")
+									} // end if (candidate1.role > candidate2.role)
+									else {
+										println("Outcome: candidate2 wins because of more restrictive (or equal) role.")
+									} // end else for if (candidate1.role > candidate2.role)
+  						        } // end case None for candidate2.endpoint match
+  						    } // end candidate2.endpoint match
+  						} // end case None for candidate1.endpoint match
   					} // end candidate1.endpoint match
   				} // end case None for candidate2.projectId match
   			} // end candidate2.projectId match
-  			// But if candidate2 doesn't have a projectId, the contest continues.
   		} // end None for candidate1.projectId match
-  } // end candidate1.projectId match             	
-	
+	} // end candidate1.projectId match             	
 
 } // end PermissionHierarchyLab3
 
