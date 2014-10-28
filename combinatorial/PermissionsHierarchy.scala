@@ -1,6 +1,6 @@
 package combinatorial
 
-object PermissionHierarchyLab3 {
+object PermissionHierarchyLab3 extends App {
     
     /********** MODEL *************************************************/
   
@@ -17,12 +17,14 @@ object PermissionHierarchyLab3 {
 	
 	/******** INSTANCES ************************************************/
   
-	val p1 = UserPermission(Some("path.one"), Some(10), Role.VIEW)
-	val p2 = UserPermission(Some("path.one"), Some(10), Role.EDIT)
+	val p1 = UserPermission(Some("path.one"), None, Role.VIEW)
+	val p2 = UserPermission(None, Some(10), Role.VIEW)
 	val p3 = UserPermission(None, Some(10), Role.EDIT)
 	val p4 = UserPermission(Some("path.one"), None, Role.EDIT)
 	val p5 = UserPermission(None, None, Role.EDIT)
-	val p6 = UserPermission(None, Some(10), Role.VIEW)
+	val p6 = UserPermission(None, Some(10), Role.EDIT)
+	val p7 = UserPermission(Some("path.one"), None, Role.EDIT)
+	val p8 = UserPermission(Some("path.one"), None, Role.VIEW)
 
 	  /******** CONDITIONAL LOGIC **************************************/
   
@@ -31,8 +33,8 @@ object PermissionHierarchyLab3 {
 	 * endpoints are guaranteed to match required endpoint or be None.
 	 */
   
-	val candidate1 = p1
-	val candidate2 = p3
+	val candidate1 = p8
+	val candidate2 = p7
 
 	//............. Easy defaults positions .............//
   
@@ -121,7 +123,7 @@ object PermissionHierarchyLab3 {
   						case None => { // If candidate2 has endpoint it wins, else just compare roles.
   						    candidate2.endpoint match {
   						        case Some(cand2_endpoint) => {
-  						            println("Outcome: candidate2 wins because of more restrictive role.")
+  						            println("Outcome: candidate2 wins because of endpoint specificity.")
   						        } // end case Some(cand2_endpoint)
   						        case None => {
   						            // No projectIds nor endpoints at this point, so just compare roles.
