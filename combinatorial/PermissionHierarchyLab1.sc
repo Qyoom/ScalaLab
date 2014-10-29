@@ -100,6 +100,7 @@ object PermissionHierarchyLab1 {
   							candidate2.endpoint match {
   								case Some(cand2_endpoint) => {
   									// Still a match, so now the final comparison of roles...
+  									// TODO: ROLE COMPARISON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   								} // end Some(cand2_endpoint)
   								case None => {
   									// candidate1 wins because of endpoint specificity
@@ -138,8 +139,31 @@ object PermissionHierarchyLab1 {
   		case None => { // candidate1.projectId match
   			// If candidate2 has a projectId candidate2 wins.
   			candidate2.projectId match {
-  				case Some(cand2_pId) => {} // end case Some(cand2_pId)
-  				case None => {} // end case None for candidate2.projectId match
+  				case Some(cand2_pId) => {
+  					println("Lab 2 - candidate2 wins because of projectId specificity.")
+  				} // end case Some(cand2_pId)
+  				case None => {
+  					// Neither have projectIds, so then need to compare endpoint specificity
+  					candidate1.endpoint match {
+  						case Some(cand1_endpoint) => { //
+  						
+  							candidate2.endpoint match {
+  								case Some(cand2_endpoint) => {
+  									// Still a match, so now the final comparison of roles...
+  									// TODO: ROLE COMPARISON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  								} // end Some(cand2_endpoint)
+  								case None => {
+  									// candidate1 wins because of endpoint specificity
+  									println("Lab 2 - candidate1 wins because of endpoint specificity")
+  								} // end case None for candidate2.endpoint match
+  							} // end candidate2.endpoint match
+  							
+  						} // end case Some(cand1_endpoint)
+  						
+  						case None => {} //
+  						
+  					} // end candidate1.endpoint match
+  				} // end case None for candidate2.projectId match
   			} // end candidate2.projectId match
   			// But if candidate2 doesn't have a projectId, the contest continues.
   		} // end None for candidate1.projectId match
