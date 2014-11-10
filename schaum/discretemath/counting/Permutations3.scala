@@ -15,7 +15,6 @@ object Permutations3 {
 	  		}
 	  	}
   		denom(r, 1)
-  		1 // STUB
 	}                                               //> numPerms: (n: Int)(r: Int*)Int
   
   numPerms(1)(2) 
