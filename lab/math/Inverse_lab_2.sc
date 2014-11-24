@@ -1,7 +1,6 @@
 package lab.math
 import math._
 object Inverse_lab_2 {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   
   val r1 = List(1.0,2.0,3.0)                      //> r1  : List[Double] = List(1.0, 2.0, 3.0)
   val r2 = List(4.0,5.0,6.0)                      //> r2  : List[Double] = List(4.0, 5.0, 6.0)

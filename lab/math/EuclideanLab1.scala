@@ -3,7 +3,7 @@ package lab.math
 import math._
 import lab.math.NthRoot._
 
-object EclideanLab1 extends App {
+object EuclideanLab1 extends App {
   
 	// Euclidean Distance ///////////////////////////////////////////////////
   
@@ -57,7 +57,7 @@ object EclideanLab1 extends App {
 			  	}
 			}
 		}
-		sqrt(inter(xs, 0.0))
+		sqrt(inter(xs, 0.0)) // square root of the sum of squared differences
 	}
 	
 	//...........................//
